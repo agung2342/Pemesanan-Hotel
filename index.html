@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Odua Weston Jambi</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f6f8;
+      color: #202124;
+    }
+
+    .navbar {
+      background-color: #003580;
+      padding: 1rem 2rem;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .navbar .logo {
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+
+    .navbar nav a {
+      color: white;
+      margin-left: 1.5rem;
+      text-decoration: none;
+    }
+
+    .main-section {
+      padding: 2rem;
+      max-width: 1200px;
+      margin: auto;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .stars {
+      color: #ff9800;
+      font-size: 1.2rem;
+    }
+
+    .address {
+      color: #555;
+      margin-bottom: 1rem;
+    }
+
+    .rating {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+    }
+
+    .score {
+      color: #0071c2;
+      font-size: 2rem;
+      font-weight: bold;
+    }
+
+    .tags {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .tag {
+      background-color: #e6f0ff;
+      color: #003580;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      font-size: 0.9rem;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .gallery img {
+      width: 100%;
+      border-radius: 8px;
+    }
+
+    .price {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #202124;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .btn {
+      background-color: #0071c2;
+      color: white;
+      padding: 0.5rem 1.2rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background-color: #005b9f;
+    }
+  </style>
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">Skyscanner Clone</div>
+    <nav>
+      <a href="hotel.html">Hotel</a>
+      <a href="rooms.html">Kamar</a>
+      <a href="contact.html">Kontak</a>
+    </nav>
+  </header>
+
+  <main class="main-section">
+    <h1>Odua Weston Jambi <span class="stars">★★★</span></h1>
+    <p class="address">Jl. Gatot Subroto No.57, Sungai Asam, Kec. Ps, Jambi, 36133, Indonesia</p>
+
+    <div class="rating">
+      <span class="score">4.6</span>/5 <strong>Excellent</strong> – 55 reviews
+    </div>
+
+    <div class="tags">
+      <div class="tag">Lokasi dinilai 4.6/5</div>
+      <div class="tag">Layanan dinilai 4.6/5</div>
+    </div>
+
+    <div class="gallery">
+      <img src="https://via.placeholder.com/300x200?text=Kamar+Hotel" alt="Kamar">
+      <img src="https://via.placeholder.com/300x200?text=Gedung+Hotel" alt="Gedung">
+      <img src="https://via.placeholder.com/300x200?text=Lobby" alt="Lobby">
+      <img src="https://via.placeholder.com/300x200?text=Ruang+Meeting" alt="Meeting Room">
+    </div>
+
+    <div class="price">Rp 500.000 <button class="btn">Pesan Sekarang</button></div>
+  </main>
+</body>
+</html>

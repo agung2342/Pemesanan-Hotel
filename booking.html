@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pesan Kamar</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">Skyscanner Clone</div>
+    <nav>
+      <a href="hotel.html">Hotel</a>
+      <a href="rooms.html">Kamar</a>
+      <a href="contact.html">Kontak</a>
+    </nav>
+  </header>
+
+  <main class="main-section container">
+    <h1>Form Pemesanan Kamar</h1>
+
+    <form id="bookingForm" class="booking-form">
+      <label for="nama">Nama Lengkap:</label>
+      <input type="text" id="nama" name="nama" required />
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="telepon">Nomor Telepon:</label>
+      <input type="tel" id="telepon" name="telepon" required />
+
+      <label for="kamar">Tipe Kamar:</label>
+      <input type="text" id="kamar" name="kamar" readonly />
+
+      <label for="checkin">Tanggal Check-in:</label>
+      <input type="date" id="checkin" name="checkin" required />
+
+      <label for="checkout">Tanggal Check-out:</label>
+      <input type="date" id="checkout" name="checkout" required />
+
+      <label for="jumlah">Jumlah Tamu:</label>
+      <input type="number" id="jumlah" name="jumlah" min="1" max="10" required />
+
+      <button type="submit" class="btn">Kirim Pemesanan</button>
+    </form>
+
+    <!-- Tempat konfirmasi -->
+    <div id="confirmation" style="display: none; margin-top: 2rem; background: #e1f3e6; padding: 1.5rem; border-radius: 8px; border-left: 5px solid green;">
+      <h2>✅ Pemesanan Berhasil!</h2>
+      <p id="confirmText"></p>
+    </div>
+  </main>
+
+  <script>
+    // Ambil tipe kamar dari URL dan tampilkan di input
+    const urlParams = new URLSearchParams(window.location.search);
+    const tipe = urlParams.get("tipe");
+    const inputKamar = document.getElementById("kamar");
+    if (tipe) {
+      inputKamar.value = tipe.charAt(0).toUpperCase() + tipe.slice(1) + " Room";
+    }
+
+    // Tangani submit form
+    document.getElementById("bookingForm").addEventListener("submit", function(e) {
+      e.preventDefault(); // Hindari reload
+
+      const nama = document.getElementById("nama").value;
+      const kamar = document.getElementById("kamar").value;
+      const checkin = document.getElementById("checkin").value;
+      const checkout = document.getElementById("checkout").value;
+      const jumlah = document.getElementById("jumlah").value;
+
+      const confirmationBox = document.getElementById("confirmation");
+      const confirmText = document.getElementById("confirmText");
+
+      confirmText.innerHTML = `Terima kasih, <strong>${nama}</strong>!<br>
+        Pemesanan untuk <strong>${kamar}</strong> berhasil dilakukan dari <strong>${checkin}</strong> sampai <strong>${checkout}</strong>
+        untuk <strong>${jumlah} tamu</strong>.`;
+
+      confirmationBox.style.display = "block";
+
+      // Kosongkan form (opsional)
+      this.reset();
+      inputKamar.value = kamar; // Set ulang tipe kamar agar tetap tampil
+    });
+  </script>
+</body>
+</html>
